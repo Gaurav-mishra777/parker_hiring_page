@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Hub</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .accent-gradient {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+    </style>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body class="h-full">
+    <div id="app" class="w-full h-full gradient-bg text-white overflow-auto"><!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-slate-900/80 backdrop-blur-md border-b border-white/5">
+            <div class="max-w-6xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="https://ik.imagekit.io/2jiaqpas32/wp-content/uploads/2021/05/parker_logo_update-removebg-preview.png"
+                        alt="Parker's Consulting Logo" class="w-10 h-10 rounded-lg object-cover" style="height: 70px;"
+                        loading="lazy"
+                        onerror="console.error('Logo failed to load:', this.src); this.style.background='#f97316'; this.alt='Parker Logo';">
+                    <div>
+                        <span id="nav-company" class="text-xl font-semibold">Parker's Consulting</span>
+                        <p class="text-xs text-slate-400">Careers</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-8"><a href="#culture"
+                        class="text-slate-300 hover:text-orange-400 transition-colors">Culture</a> <a href="#jobs"
+                        class="text-slate-300 hover:text-orange-400 transition-colors">Open Roles</a> <a href="#apply"
+                        class="px-5 py-2 accent-gradient rounded-full font-medium hover:opacity-90 transition-opacity">Apply
+                        Now</a>
+                </div>
+            </div>
+        </nav><!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8 fade-in-up">
+                    <span class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></span> <span
+                        class="text-orange-400 text-sm font-medium">We're Hiring!</span>
+                </div>
+                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 leading-tight fade-in-up delay-1">Build
+                    the Future<br><span class="text-orange-400">With Us</span></h1>
+                <p id="hero-subtitle" class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto fade-in-up delay-2">Join our
+                    team of innovators, dreamers, and builders. Together, we're creating technology that transforms how
+                    people work and live.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-3"><a href="#jobs"
+                        class="px-8 py-4 accent-gradient rounded-full font-semibold text-lg hover:opacity-90 transition-all hover:scale-105">
+                        View Open Positions </a> <a href="#culture"
+                        class="px-8 py-4 glass-card rounded-full font-semibold text-lg hover:bg-white/10 transition-all">
+                        Learn About Us </a>
+                </div>
+                <div class="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto fade-in-up delay-4">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-400">
+                            500+
+                        </div>
+                        <div class="text-slate-500 text-sm">
+                            Team Members
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-400">
+                            20+
+                        </div>
+                        <div class="text-slate-500 text-sm">
+                            States
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-orange-400">
+                            150+
+                        </div>
+                        <div class="text-slate-500 text-sm">
+                            Cities
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Culture Section -->
+        <section id="culture" class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 id="culture-title" class="text-4xl md:text-5xl font-bold mb-4">Why Join Us?</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">We believe in creating an environment where
+                        talented people can do their best work.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Industry Leadership -->
+    <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all group">
+        <div class="w-14 h-14 accent-gradient rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <!-- Trophy Icon -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4zM5 4h2M17 4h2" />
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Industry Leadership</h3>
+        <p class="text-slate-400">Be part of one of India’s leading Corporate DSA & fast-growing loan distribution companies.</p>
+    </div>
+
+    <!-- Nationwide Growth -->
+    <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all group">
+        <div class="w-14 h-14 accent-gradient rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <!-- Globe Icon -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Nationwide Growth</h3>
+        <p class="text-slate-400">Operate across multiple cities and states with a rapidly expanding network.</p>
+    </div>
+
+    <!-- Career Advancement -->
+    <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all group">
+        <div class="w-14 h-14 accent-gradient rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <!-- Trending Up Icon -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 17l6-6 4 4 8-8M14 7h7v7" />
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Career Advancement</h3>
+        <p class="text-slate-400">Accelerate your growth with structured career paths and leadership opportunities.</p>
+    </div>
+
+    <!-- Client-Centric Culture -->
+    <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all group">
+        <div class="w-14 h-14 accent-gradient rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <!-- Handshake / Users Icon -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M12 12a5 5 0 110-10 5 5 0 010 10z" />
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Client-Centric Culture</h3>
+        <p class="text-slate-400">Build strong relationships with customers and financial partners.</p>
+    </div>
+
+    <!-- Diverse Financial Services -->
+    <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all group">
+        <div class="w-14 h-14 accent-gradient rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <!-- Bank / Finance Icon -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 10l9-6 9 6M4 10h16v10H4V10zM10 14v4M14 14v4" />
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Diverse Financial Services</h3>
+        <p class="text-slate-400">Gain exposure to home loans, business loans, personal loans, and more.</p>
+    </div>
+
+    <!-- Impactful Mission -->
+    <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all group">
+        <div class="w-14 h-14 accent-gradient rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <!-- Target Icon -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                <circle cx="12" cy="12" r="4" stroke-width="2"></circle>
+                <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Impactful Mission</h3>
+        <p class="text-slate-400">Help individuals and businesses achieve their financial goals through tailored solutions.</p>
+    </div>
+
+</div>
+            </div>
+        </section>
+        <!-- Jobs Section -->
+        <section id="jobs" class="py-24 px-6 bg-slate-900/50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 id="jobs-title" class="text-4xl md:text-5xl font-bold mb-4">Open Positions</h2>
+                    <p class="text-slate-400 text-lg">Find your next opportunity</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all cursor-pointer group"
+    onclick="selectJob('Branch Sales Head')">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h3 class="text-xl font-semibold group-hover:text-orange-400 transition-colors">
+                Branch Sales Head
+            </h3>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="text-slate-500 text-sm flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Bhopal
+                </span>
+                <span class="text-slate-500 text-sm">Sales</span>
+                <span class="text-slate-500 text-sm">4–7 Years (DSA / Bank / NBFC)</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 text-orange-400 font-medium">
+            Apply
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<div class="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all cursor-pointer group"
+    onclick="selectJob('Zonal Head – Insurance')">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h3 class="text-xl font-semibold group-hover:text-orange-400 transition-colors">
+                Zonal Head – Insurance
+            </h3>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="text-slate-500 text-sm flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Pan India
+                </span>
+                <span class="text-slate-500 text-sm">Insurance</span>
+                <span class="text-slate-500 text-sm">6–10 Years</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 text-orange-400 font-medium">
+            Apply
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<div class="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all cursor-pointer group"
+    onclick="selectJob('Operations Manager – Secured & Unsecured Loans')">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h3 class="text-xl font-semibold group-hover:text-orange-400 transition-colors">
+                Operations Manager – Secured & Unsecured Loans
+            </h3>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="text-slate-500 text-sm flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Indore
+                </span>
+                <span class="text-slate-500 text-sm">Operations</span>
+                <span class="text-slate-500 text-sm">3–5 Years (BFSI / NBFC / DSA)</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 text-orange-400 font-medium">
+            Apply
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<div class="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all cursor-pointer group"
+    onclick="selectJob('Accounts Executive')">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h3 class="text-xl font-semibold group-hover:text-orange-400 transition-colors">
+                Accounts Executive
+            </h3>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="text-slate-500 text-sm flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Indore
+                </span>
+                <span class="text-slate-500 text-sm">Accounts</span>
+                <span class="text-slate-500 text-sm">2–4 Years</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 text-orange-400 font-medium">
+            Apply
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<div class="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all cursor-pointer group"
+    onclick="selectJob('Video Content Creator')">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h3 class="text-xl font-semibold group-hover:text-orange-400 transition-colors">
+                Video Content Creator
+            </h3>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="text-slate-500 text-sm flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Indore
+                </span>
+                <span class="text-slate-500 text-sm">Marketing</span>
+                <span class="text-slate-500 text-sm">2–3 Years</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 text-orange-400 font-medium">
+            Apply
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<div class="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all cursor-pointer group"
+    onclick="selectJob('Telecaller')">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+            <h3 class="text-xl font-semibold group-hover:text-orange-400 transition-colors">
+                Telecaller
+            </h3>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="text-slate-500 text-sm flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Indore
+                </span>
+                <span class="text-slate-500 text-sm">Sales</span>
+                <span class="text-slate-500 text-sm">1–3 Years</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 text-orange-400 font-medium">
+            Apply
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+        <!-- Application Form Section -->
+        <section id="apply" class="py-24 px-6">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 id="apply-title" class="text-4xl md:text-5xl font-bold mb-4">Apply Now</h2>
+                    <p class="text-slate-400 text-lg">Take the first step towards your next adventure</p>
+                </div>
+                <form id="application-form" class="glass-card rounded-3xl p-8 md:p-10 space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div><label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                                placeholder="John Doe">
+                        </div>
+                        <div><label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                                placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div><label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                                placeholder="987654XXXX">
+                        </div>
+                        <div><label for="current-location" class="block text-sm font-medium text-slate-300 mb-2">Current
+                                Location</label> <input type="text" id="current-location" name="current_location"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                                placeholder="e.g., Delhi, India">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div><label for="position" class="block text-sm font-medium text-slate-300 mb-2">Position
+                                *</label> <select id="position" name="position" required
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all">
+                                <option value="" class="bg-slate-800">Select a position</option>
+                                <option value="Branch Sales Head" class="bg-slate-800">Branch Sales Head</option>
+                                <option value="Zonal Head – Insurance" class="bg-slate-800">Zonal Head – Insurance</option>
+                                <option value="Operations Manager – Secured & Unsecured Loans" class="bg-slate-800">Operations Manager – Secured & Unsecured Loans</option>
+                                <option value="Accounts Executive" class="bg-slate-800">Accounts Executive</option>
+                                <option value="Video Content Creator" class="bg-slate-800">Video Content Creator</option>
+                                <option value="Telecaller" class="bg-slate-800">Telecaller</option>
+                            </select>
+                        </div>
+                        <div><label for="experience" class="block text-sm font-medium text-slate-300 mb-2">Years of
+                            Experience *</label> <select id="experience" name="experience" required
+                            class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all">
+                            <option value="" class="bg-slate-800">Select experience level</option>
+                            <option value="0-2 years" class="bg-slate-800">0-2 years</option>
+                            <option value="3-5 years" class="bg-slate-800">3-5 years</option>
+                            <option value="5-10 years" class="bg-slate-800">5-10 years</option>
+                            <option value="10+ years" class="bg-slate-800">10+ years</option>
+                        </select>
+                    </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div><label for="current-ctc" class="block text-sm font-medium text-slate-300 mb-2">Current
+                                CTC</label> <input type="text" id="current-ctc" name="current_ctc"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                                placeholder="e.g., 3 LPA">
+                        </div>
+                        <div><label for="expected-ctc" class="block text-sm font-medium text-slate-300 mb-2">Expected
+                                CTC</label> <input type="text" id="expected-ctc" name="expected_ctc"
+                                class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                                placeholder="e.g., 5 LPA">
+                        </div>
+                    </div>
+                    <div><label for="message" class="block text-sm font-medium text-slate-300 mb-2">Tell us about
+                            yourself</label> <textarea id="message" name="message" rows="4"
+                            class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all resize-none"
+                            placeholder="Share your background, what excites you about this role, and why you'd be a great fit..."></textarea>
+                    </div>
+                    <div><label for="resume" class="block text-sm font-medium text-slate-300 mb-2">Resume / CV *</label>
+                        <div class="relative">
+                            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.txt" required
+                                class="hidden"> <label for="resume"
+                                class="w-full px-4 py-3 bg-slate-800/50 border-2 border-dashed border-slate-600 rounded-xl text-white cursor-pointer hover:border-orange-500 hover:bg-slate-800/70 transition-all flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor"
+                                    viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4v16m8-8H4" />
+                                </svg><span id="resume-label" class="text-slate-400">Click to upload or drag &amp;
+                                    drop</span> </label> <span id="resume-name"
+                                class="text-xs text-orange-400 mt-2 block"></span>
+                        </div>
+                    </div><button type="submit" id="submit-btn"
+                        class="w-full py-4 accent-gradient rounded-xl font-semibold text-lg hover:opacity-90 transition-all hover:scale-[1.02] flex items-center justify-center gap-2">
+                        <span id="submit-text">Submit Application</span>
+                        <svg id="submit-spinner" class="w-5 h-5 animate-spin hidden" fill="none" viewbox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg></button>
+                    <div id="form-message" class="hidden text-center py-4 rounded-xl"></div>
+                </form>
+            </div>
+        </section><!-- Footer -->
+        <footer class="py-12 px-6 border-t border-white/5">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <img src="https://ik.imagekit.io/2jiaqpas32/wp-content/uploads/2021/05/parker_logo_update-removebg-preview.png"
+                        alt="Parker's Consulting Logo" class="w-8 h-8 rounded object-cover" style="height: 70px;"
+                        loading="lazy"
+                        onerror="console.error('Logo failed to load:', this.src); this.style.background='#f97316'; this.alt='Logo';">
+                    <span id="footer-company" class="text-lg font-semibold">Parker's Consulting</span>
+                </div>
+                <p class="text-slate-500 text-sm">© 2024 All rights reserved. Building the future, one hire at a time.
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const defaultConfig = {
+            company_name: 'Parker\'s Consulting',
+            hero_title: 'Build the Future With Us',
+            hero_subtitle: 'Join our team of innovators, dreamers, and builders. Together, we\'re creating technology that transforms how people work and live.',
+            culture_title: 'Why Join Us?',
+            jobs_title: 'Open Positions',
+            apply_title: 'Apply Now',
+            background_color: '#0f172a',
+            surface_color: 'rgba(255, 255, 255, 0.03)',
+            text_color: '#ffffff',
+            primary_action_color: '#f97316',
+            secondary_text_color: '#94a3b8',
+            font_family: 'Outfit',
+            font_size: 16
+        };
+
+        let applications = [];
+        let selectedResumeFile = null;
+        const allowedResumeMimeTypes = [
+            'application/pdf',
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'text/plain'
+        ];
+
+        const dataHandler = {
+            onDataChanged(data) {
+                applications = data;
+            }
+        };
+
+        async function initDataSdk() {
+            if (window.dataSdk) {
+                const result = await window.dataSdk.init(dataHandler);
+                if (!result.isOk) {
+                    console.error('Failed to initialize Data SDK');
+                }
+            }
+        }
+
+        function selectJob(position) {
+            document.getElementById('position').value = position;
+            document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const submitSpinner = document.getElementById('submit-spinner');
+            const formMessage = document.getElementById('form-message');
+
+            if (!selectedResumeFile) {
+                formMessage.textContent = 'Please upload your resume/CV';
+                formMessage.className = 'text-center py-4 rounded-xl bg-red-500/20 text-red-400';
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitText.textContent = 'Submitting...';
+            submitSpinner.classList.remove('hidden');
+            formMessage.classList.add('hidden');
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value || '',
+                current_location: document.getElementById('current-location').value || '',
+                position: document.getElementById('position').value,
+                experience: document.getElementById('experience').value,
+                current_ctc: document.getElementById('current-ctc').value || '',
+                expected_ctc: document.getElementById('expected-ctc').value || '',
+                message: document.getElementById('message').value || '',
+                resume_filename: selectedResumeFile.name,
+                submitted_at: new Date().toISOString()
+            };
+
+            try {
+                if (window.dataSdk) {
+                    if (applications.length >= 999) {
+                        formMessage.textContent = 'Application limit reached. Please try again later.';
+                        formMessage.className = 'text-center py-4 rounded-xl bg-red-500/20 text-red-400';
+                        formMessage.classList.remove('hidden');
+                        return;
+                    }
+
+                    const result = await window.dataSdk.create(formData);
+                    if (!result.isOk) {
+                        throw new Error('Unable to save application data');
+                    }
+                }
+
+                const payload = new FormData();
+                Object.entries(formData).forEach(([key, value]) => payload.append(key, value));
+                payload.append('resume', selectedResumeFile);
+
+                const response = await fetch('/api/apply', {
+                    method: 'POST',
+                    body: payload
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.error || 'Failed to submit application');
+                }
+
+                formMessage.textContent = 'Application submitted successfully. We will be in touch soon.';
+                formMessage.className = 'text-center py-4 rounded-xl bg-green-500/20 text-green-400';
+                document.getElementById('application-form').reset();
+                selectedResumeFile = null;
+                document.getElementById('resume-name').textContent = '';
+                document.getElementById('resume-label').textContent = 'Click to upload or drag & drop';
+            } catch (error) {
+                console.error('Error submitting application:', error);
+                formMessage.textContent = error.message || 'Something went wrong. Please try again.';
+                formMessage.className = 'text-center py-4 rounded-xl bg-red-500/20 text-red-400';
+            } finally {
+                formMessage.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitText.textContent = 'Submit Application';
+                submitSpinner.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const resumeInput = document.getElementById('resume');
+            const resumeDropZone = document.querySelector('label[for="resume"]');
+            const resumeName = document.getElementById('resume-name');
+            const resumeLabelText = document.getElementById('resume-label');
+            const formContainer = document.getElementById('application-form');
+
+            resumeInput.addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    if (!allowedResumeMimeTypes.includes(this.files[0].type)) {
+                        resumeName.textContent = 'Only PDF, DOC, DOCX, or TXT files are allowed.';
+                        resumeLabelText.textContent = 'Upload failed';
+                        selectedResumeFile = null;
+                        resumeInput.value = '';
+                        return;
+                    }
+
+                    selectedResumeFile = this.files[0];
+                    resumeName.textContent = `Uploaded: ${selectedResumeFile.name} (${(selectedResumeFile.size / 1024).toFixed(2)} KB)`;
+                    resumeLabelText.textContent = 'Resume uploaded';
+                }
+            });
+
+            if (formContainer && resumeDropZone) {
+                formContainer.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    resumeDropZone.style.borderColor = '#f97316';
+                    resumeDropZone.style.background = 'rgba(249, 115, 22, 0.1)';
+                });
+
+                formContainer.addEventListener('dragleave', (e) => {
+                    e.preventDefault();
+                    resumeDropZone.style.borderColor = '';
+                    resumeDropZone.style.background = '';
+                });
+
+                formContainer.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    resumeDropZone.style.borderColor = '';
+                    resumeDropZone.style.background = '';
+
+                    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                        const file = e.dataTransfer.files[0];
+                        if (allowedResumeMimeTypes.includes(file.type)) {
+                            selectedResumeFile = file;
+                            resumeInput.files = e.dataTransfer.files;
+                            resumeName.textContent = `Uploaded: ${selectedResumeFile.name} (${(selectedResumeFile.size / 1024).toFixed(2)} KB)`;
+                            resumeLabelText.textContent = 'Resume uploaded';
+                        } else {
+                            resumeName.textContent = 'Only PDF, DOC, DOCX, or TXT files are allowed.';
+                            resumeLabelText.textContent = 'Upload failed';
+                        }
+                    }
+                });
+            }
+        });
+
+        async function onConfigChange(config) {
+            const fontFamily = config.font_family || defaultConfig.font_family;
+            const fontSize = config.font_size || defaultConfig.font_size;
+
+            document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+
+            document.getElementById('nav-company').textContent = config.company_name || defaultConfig.company_name;
+            document.getElementById('footer-company').textContent = config.company_name || defaultConfig.company_name;
+
+            const heroTitle = config.hero_title || defaultConfig.hero_title;
+            const titleParts = heroTitle.split(' ');
+            const lastTwoWords = titleParts.slice(-2).join(' ');
+            const firstWords = titleParts.slice(0, -2).join(' ');
+            document.getElementById('hero-title').innerHTML = `${firstWords}<br><span class="text-orange-400">${lastTwoWords}</span>`;
+
+            document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            document.getElementById('culture-title').textContent = config.culture_title || defaultConfig.culture_title;
+            document.getElementById('jobs-title').textContent = config.jobs_title || defaultConfig.jobs_title;
+            document.getElementById('apply-title').textContent = config.apply_title || defaultConfig.apply_title;
+
+            const bgColor = config.background_color || defaultConfig.background_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+
+            document.documentElement.style.setProperty('--bg-color', bgColor);
+            document.body.style.color = textColor;
+
+            document.getElementById('hero-title').style.fontSize = `${fontSize * 3.5}px`;
+            document.getElementById('hero-subtitle').style.fontSize = `${fontSize * 1.25}px`;
+            document.getElementById('culture-title').style.fontSize = `${fontSize * 2.5}px`;
+            document.getElementById('jobs-title').style.fontSize = `${fontSize * 2.5}px`;
+            document.getElementById('apply-title').style.fontSize = `${fontSize * 2.5}px`;
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+                        },
+                        {
+                            get: () => config.surface_color || defaultConfig.surface_color,
+                            set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+                        },
+                        {
+                            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                            set: (value) => { config.primary_action_color = value; window.elementSdk.setConfig({ primary_action_color: value }); }
+                        },
+                        {
+                            get: () => config.secondary_text_color || defaultConfig.secondary_text_color,
+                            set: (value) => { config.secondary_text_color = value; window.elementSdk.setConfig({ secondary_text_color: value }); }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: {
+                        get: () => config.font_family || defaultConfig.font_family,
+                        set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+                    },
+                    fontSizeable: {
+                        get: () => config.font_size || defaultConfig.font_size,
+                        set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+                    }
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ['company_name', config.company_name || defaultConfig.company_name],
+                    ['hero_title', config.hero_title || defaultConfig.hero_title],
+                    ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+                    ['culture_title', config.culture_title || defaultConfig.culture_title],
+                    ['jobs_title', config.jobs_title || defaultConfig.jobs_title],
+                    ['apply_title', config.apply_title || defaultConfig.apply_title]
+                ])
+            });
+        }
+
+        initDataSdk();
+        document.getElementById('application-form').addEventListener('submit', handleSubmit);
+    </script>
+</body>
+
+</html>
